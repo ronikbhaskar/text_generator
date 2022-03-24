@@ -1,5 +1,6 @@
 /*
  * This is where you can go absolutely wild with the frontend design
+ * Author: INSERT NAME HERE
  */
 
 /* Example code (it works as is, but it's boring to look at) */
