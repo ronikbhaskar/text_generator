@@ -1,0 +1,25 @@
+/* boilerplate */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow: scroll;
+}
+
+/* some examples of what you can do 
+ * I intentionally made it look bad. */
+h3 {
+    background-color: forestgreen;
+    color: white;
+}
+
+.my-button-class {
+    width: 10%;
+    height: 5%;
+    margin: 2rem;
+}
+
+.my-output-class {
+    text-align: right;
+}
