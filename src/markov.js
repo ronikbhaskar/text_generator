@@ -342,7 +342,7 @@ class AssociationTable
         let nextWord;
         let wasPeriod = prevWord === ".";
 
-        for (let i = 0; i < numTokens; ++i)
+        for (let i = 1; i < numTokens; ++i)
         {
             assocEntry = this.#table.get(prevWord);
             if (assocEntry === undefined)
