@@ -10,9 +10,11 @@ If you haven't already seen my text generator in action, let me know if you want
 3. Accept the invitation in your email to join this repository.
 4. Open a terminal/command prompt.
 5. Enter the following commands:
- i. `git clone https://github.com/ronikbhaskar/text_gen_web/` to clone the repository
- ii. `git checkout -b [name of your branch]` replace [name of your branch] with something you can identify as yours, like your GitHub username
- iii. `git add .; git commit -m 'initial commit'; git push --set-upstream origin/[name of your branch]` to create an online branch for your local branch to track
+
+  - `git clone https://github.com/ronikbhaskar/text_gen_web/` to clone the repository
+  - `git checkout -b [name of your branch]` replace [name of your branch] with something you can identify as yours, like your GitHub username
+    - make sure there are no spaces in the name of your branch: ✅ "ronik_is_the_best" ❌ "ronik is the best"
+  - `git add .; git commit -m 'initial commit'; git push --set-upstream origin/[name of your branch]` to create an online branch for your local branch to track
 
 ### To try out your web app
 Navigate through your files, get to the folder called "text_gen_web", and double click on the file titled "index.html"
@@ -28,8 +30,15 @@ There are three files at your disposal: `index.html`, `style.css`, and `frontend
  - `index.html` is where you can add, remove, and modify HTML elements, like buttons, inputs, headers (h1, h2, etc.), divs, links, etc.
    - I marked what you should modify and what you shouldn't, but you're free to change anything and everything.
  - `style.css` is where you can change the color, fonts, formatting, layout, and overall look of your HTML elements.
-   - This is where you make everything look ~pretty~.
+   - This is where you make everything look *~pretty~*.
  - `frontend.js` is where you can add basic functionality, like what to do when someone presses a button. 
+
+Once you've made changes you are happy with, in your terminal/command prompt, navigate to the folder "text_gen_web" and enter the following:
+ - `git add .`
+ - `git commit -m 'commit message'`
+ - `git push`
+
+Let me know if you ever reach a point where you're done or you want to add functionality to show statistics about the text.
 
 ### To debug your code
 Most of your changes will be visual, affecting the look of html elements on the page, in which case playing around with the page in your browser should be just fine, but sometimes you need to modify things you can't see, like margins. For those:
