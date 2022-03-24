@@ -12,6 +12,7 @@ If you haven't already seen my text generator in action, let me know if you want
 5. Enter the following commands:
 
   - `git clone https://github.com/ronikbhaskar/text_gen_web/` to clone the repository
+  - `cd text_gen_web` to enter the root directory
   - `git checkout -b [name of your branch]` replace [name of your branch] with something you can identify as yours, like your GitHub username
     - make sure there are no spaces in the name of your branch: ✅ "ronik_is_the_best" ❌ "ronik is the best"
   - `git add .; git commit -m 'initial commit'; git push --set-upstream origin/[name of your branch]` to create an online branch for your local branch to track
