@@ -1,5 +1,7 @@
 # Text Generation: Web
 
+IMPORTANT: This repository functions more as a way for me to begin collaborating with others and give people a quick project if they want to try their hand at HTML, JS, and CSS. For a more useful version of my text generator, see: https://github.com/ronikbhaskar/markov_text_generation.
+
 If you haven't already seen my text generator in action, let me know if you want a demo.
 
 ## Instructions for collaborators:
