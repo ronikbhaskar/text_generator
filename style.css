@@ -9,9 +9,38 @@ html {
 
 /* some examples of what you can do 
  * I intentionally made it look bad. */
+body {
+    background-color: #2b88f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 h3 {
-    background-color: forestgreen;
-    color: white;
+    background-color: yellow;
+    color: black;
+    margin: 10px 10px 20px;
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.jon_myInputWindow {
+    background-color: black;
+    color: yellow;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.jon_myNumInput {
+    background-color: black;
+    color: yellow;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+    width: 500px;
 }
 
 .my-button-class {
