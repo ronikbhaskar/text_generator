@@ -62,6 +62,15 @@ class ListEntry
         this.#probability = 0;
     }
 
+    /* getFrequency - gives #frequency
+     *
+     * Returns: int (frequency)
+     */
+    getFrequency()
+    {
+        return this.#frequency;
+    } 
+
     /* inc - increases frequency by 1 */
     inc() 
     {
@@ -145,6 +154,15 @@ class AssociationEntry
         this.#assocMap = new Map();
         this.#assocMap.set(nextWord, new ListEntry(nextWord))
     }
+
+    /* getAssocMap - gives #assocMap
+     *
+     * Returns: Map(<string>,<ListEntry>)
+     */
+    getAssocMap()
+    {
+        return this.#assocMap;
+    } 
 
     /* addWord - updates relevant entry in assocMap
      * - creates new entry if one doesn't exist
@@ -243,6 +261,44 @@ class AssociationTable
         this.#table = new Map();
         this.#recalculatedProbabilities = false;
         this.#wordsAnalyzed = 0;
+    }
+
+    /* combine - combines two AssociationTables as if they were created,
+     * does not modify existing tables
+     *
+     * assocTable - second table to be added to this table
+     * 
+     * Returns: new AssociationTable object
+     */
+    combine(assocTable)
+    {
+        let newTable = new AssociationTable();
+
+        this.#table.forEach((assocEntry, word) => 
+        {
+            assocEntry.getAssocMap().forEach((listEntry, next_word) => 
+            {
+                let freq = listEntry.getFrequency();
+                for (let i = 0; i < freq; ++i)
+                {
+                    newTable.addWord(word, next_word);
+                }
+            });
+        });
+
+        assocTable.#table.forEach((assocEntry, word) => 
+        {
+            assocEntry.getAssocMap().forEach((listEntry, next_word) => 
+            {
+                let freq = listEntry.getFrequency();
+                for (let i = 0; i < freq; ++i)
+                {
+                    newTable.addWord(word, next_word);
+                }
+            });
+        });
+
+        return newTable;
     }
 
     /* addWord - adds word to table or updates word if possible
