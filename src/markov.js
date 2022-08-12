@@ -280,9 +280,7 @@ class AssociationTable
             {
                 let freq = listEntry.getFrequency();
                 for (let i = 0; i < freq; ++i)
-                {
                     newTable.addWord(word, next_word);
-                }
             });
         });
 
@@ -292,9 +290,7 @@ class AssociationTable
             {
                 let freq = listEntry.getFrequency();
                 for (let i = 0; i < freq; ++i)
-                {
                     newTable.addWord(word, next_word);
-                }
             });
         });
 
