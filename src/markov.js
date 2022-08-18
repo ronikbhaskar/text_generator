@@ -70,7 +70,6 @@ class ListEntry
     {
         let obj = 
         {
-            // word: this.#word,
             frequency: this.#frequency
         };
 
@@ -185,7 +184,6 @@ class AssociationEntry
 
         let obj = 
         {
-            // word: this.#word,
             table: jsonTable
         };
 
