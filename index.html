@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Text Generator</title>
 </head>
-    <!-- Start Modifying Here -->
-    <body>
-        <h3>This is boilerplate for the frontend devs (that's you).</h3>
-        <input id="myInputWindow" placeholder="Add body of text here"> 
-        <input id="myNumInput" type="number" min=1 max=500 placeholder="Num words">
-        <button id="myButton" class="my-button-class">Click here</button>
-        <div id="myOutput" class="my-output-class"></div>
-    </body>
-    <!-- Stop Modifying Here -->
+    <div class="container">
+        <div class="button-grid">
+            <button class="not-model" id="modelFromCorpus" onClick="genModelFromCorpus(); textArea.focus();">Generate Model from Corpus</button>
+            <button class="not-model" id="textFromModels" onClick="genTextFromModels(); textArea.focus();">Generate Text</button>
+            <button class="not-model" id="deleteModels" onClick="deleteModels(); textArea.focus();">Delete Model(s)</button>
+            <button class="not-model" id="genJSON" onClick="genJSONFromModels(); textArea.focus();">Generate JSON for Model(s)</button>
+            <button class="not-model" id="modelFromJSON" onClick="genModelFromJSON(); textArea.focus();">Generate Model from JSON</button>
+        </div>
+        
+        <input id="modelName" type="text" placeholder="Model Name..." class="model-name"/> 
+        <input id="numTokens" type="number" min="1" placeholder="Num" class="num-tokens"/>
+        <textarea placeholder="Add text or model JSON..." id="textArea"></textarea>
+  
+        <div id="models" class="models"></div>
+    </div>
+    <footer>
+        <h3>Ronik Bhaskar, 2022. <a href="https://github.com/ronikbhaskar/text_gen_web/tree/ronik">GitHub.</a></h3>
+    </footer>
     <script src="src/markov.js"></script>
     <script src="frontend.js"></script>
     <link rel="stylesheet" href="style.css" />

@@ -1,25 +1,137 @@
-/* boilerplate */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
 * {
     box-sizing: border-box;
+}
+
+:root {
+  --container-width: min(45rem, 90vw);
+  --text-area-height: min(12rem, 30vw);
+  --text-color: #3c403d;
+  --second-text-color: #fcfcfc;
+  --bg-color: #daded4;
+  --spacing: 0.7rem;
+  --highlight-color: #39603d;
+  --unhighlight-color: #a3bcb6;
+  --hover-color: #fcfcfc;
 }
 
 html {
     overflow: scroll;
 }
 
-/* some examples of what you can do 
- * I intentionally made it look bad. */
+body {
+  background-color: var(--bg-color);
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
 h3 {
-    background-color: forestgreen;
-    color: white;
+  color: var(--text-color);
+  text-align: center;
+  font-size: small;
 }
 
-.my-button-class {
-    width: 10%;
-    height: 5%;
-    margin: 2rem;
+.container {
+  width: var(--container-width);
 }
 
-.my-output-class {
-    text-align: right;
+textarea {
+  border: none;
+  display: block;
+  width: 100%;
+  height: var(--text-area-height);
+  font-family: inherit;
+  padding: 0.5rem;
+  margin: var(--spacing) 0;
+  font-size: medium;
+}
+
+input {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  padding: 0.3rem;
+  font-size: medium;
+}
+
+.model-name {
+  width: calc(0.79 * var(--container-width) - var(--spacing));
+  margin: 0;
+  margin-right: var(--spacing);
+  margin-top: var(--spacing);
+}
+
+.num-tokens {
+  width: calc(0.19 * var(--container-width));
+  margin: 0;
+  margin-top: var(--spacing);
+}
+
+.button-grid {
+  display: grid;
+  justify-content: center;
+  align-items: left;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  width: var(--container-width);
+}
+
+textarea:focus input:focus {
+  outline: none;
+}
+
+.models {
+  display: block;
+}
+
+button {
+  border: none;
+  background-color: var(--unhighlight-color);
+  color: var(--text-color);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  margin: var(--spacing) var(--spacing) 0 0;
+  font-size: medium;
+  display: inline-block;
+}
+
+button:hover,
+button:focus.not-model {
+  background-color: var(--hover-color);
+  color: var(--text-color);
+}
+
+button:active {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+}
+
+.model-button {
+  background-color: var(--unhighlight-color);
+  color: var(--text-color);
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  margin: 0 var(--spacing) var(--spacing) 0;
+  font-size: large;
+  display: inline-block;
+  width: fit-content;
+}
+
+.model-button.selected {
+  background-color: var(--highlight-color);
+  color: var(--second-text-color);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+a {
+  color: var(--text-color);
 }
