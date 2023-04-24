@@ -412,6 +412,15 @@ class AssociationTable
         this.#recalculatedProbabilities = false;
     }
 
+    /* getWordsAnalyzed - accessor method
+     *
+     * Returns: this.#wordsAnalyzed
+     */
+    getWordsAnalyzed()
+    {
+        return this.#wordsAnalyzed;
+    }
+
     /* updateProbabilities - loops through table to update probs
      * - also updates #recalculatedProbabilities to true
      *
@@ -480,6 +489,50 @@ class AssociationTable
         if (!this.#recalculatedProbabilities)
             console.log("ERROR: generating text w/o updating probs");
         let [prevWord] = this.#table.keys();
+        let out = AssociationTable.capitalize(prevWord);
+        let assocEntry;
+        let nextWord;
+        let wasPeriod = prevWord === ".";
+
+        for (let i = 1; i < numTokens; ++i)
+        {
+            assocEntry = this.#table.get(prevWord);
+            if (assocEntry === undefined)
+                break;
+            
+            nextWord = assocEntry.nextWord();
+
+            if (nextWord === null)
+                break;
+
+            if (!(nextWord === "." || nextWord === ","))
+                out += " ";
+            
+            if (wasPeriod)
+                out += AssociationTable.capitalize(nextWord);
+            else
+                out += nextWord;
+
+            prevWord = nextWord;
+            wasPeriod = prevWord === ".";
+        }
+
+        return out;
+    }
+
+    /* seededGenText - seeds the text with a specific start token
+     *
+     * seed - the start token for the generated string, expected to be in the model
+     * 
+     * numTokens - integer max number of tokens
+     * 
+     * Returns: formatted string concatenation of tokens
+     */
+    seededGenText(seed, numTokens)
+    {
+        if (!this.#recalculatedProbabilities)
+            console.log("ERROR: generating text w/o updating probs");
+        let prevWord = seed;
         let out = AssociationTable.capitalize(prevWord);
         let assocEntry;
         let nextWord;
